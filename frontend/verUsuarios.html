@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap"
+      rel="stylesheet">
+    <script src="scripts.js"></script>
+    <title>Verificar Chamados</title>
+    
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark fixed-top border-bottom shadow-sm mb-2"
+        style="background-color:#00014B;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="./cadastro.html" k="cadastrarUsuario()">API PARA CADASTRAR USUARIOS</a>
+          </button>
+          <div class="offcanvas offcanvas-start text-white"
+            style="background-color:#131549;" tabindex="-1"
+            id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="./cadastro.html">CADASTRAR NOVO USUARIO</a>
+                </li>
+              </ul>
+              </form>
+              <ul class="navsair navbar-nav justify-content-end flex-grow-1
+                pe-3">
+                <li class="nav-item sair">
+                  <a class="nav-link " aria-current="page" href="cadastro.html">Sair</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="chamados">
+      <a href="./cadastro.html"><button class="botaoFixo">+</button></a>
+           
+    </div>
+    <h2 class="home_titulo_chamados">VERIFICAR USUARIOS CADASTRADOS</h2>
+   
+    <table class="tabelaFinanceira">
+      <tbody>
+        <tr>
+          <strong>Nome</strong>
+          <strong>Email</strong>
+          <strong>Senha</strong>
+          <strong>CPF</strong>
+          <strong>telefone</strong>
+          <strong>apartamento</strong>
+          <strong>bloco</strong>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!-- Adicione o link para o Axios -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    buscarUsuarios();
+  });
+
+  function buscarUsuarios() {
+    axios.get('http://localhost:1234/exibirUsuarios')
+      .then(response => {
+        const usuarios = response.data;
+        exibirUsuarios(usuarios);
+      })
+      .catch(error => {
+        console.error(error);
+        alert('Ocorreu um erro ao mostrar os usuários.');
+      });
+  }
+
+  function exibirUsuarios(usuarios) {
+    const tabela = document.querySelector('.tabelaFinanceira tbody');
+    tabela.innerHTML = '';
+
+    usuarios.forEach(usuario => {
+      const row = document.createElement('tr');
+      const nomeCell = document.createElement('td');
+      const emailCell = document.createElement('td');
+      const senhaCell = document.createElement('td');
+      const cpfCell = document.createElement('td');
+      const telefoneCell = document.createElement('td');
+      const apartamentoCell = document.createElement('td');
+      const blocoCell = document.createElement('td');
+
+      nomeCell.textContent = usuario.nome;
+      emailCell.textContent = usuario.email;
+      senhaCell.textContent = usuario.senha;
+      cpfCell.textContent = usuario.CPF;
+      telefoneCell.textContent = usuario.telefone;
+      apartamentoCell.textContent = usuario.apartamento;
+      blocoCell.textContent = usuario.bloco;
+
+      row.appendChild(nomeCell);
+      row.appendChild(emailCell);
+      row.appendChild(senhaCell);
+      row.appendChild(cpfCell);
+      row.appendChild(telefoneCell);
+      row.appendChild(apartamentoCell);
+      row.appendChild(blocoCell);
+
+      tabela.appendChild(row);
+    });
+  }
+</script>
+
+</html>
+
+
+

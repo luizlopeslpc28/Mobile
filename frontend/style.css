@@ -1,0 +1,426 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+
+--cor-de-body: #f4f4f4;
+--cor-de-card: rgba(76, 63, 255, 0.22);
+--cor-de-borda: #131549;
+--cor-de-card-p: #a3a5ae;
+--cor-de-texto: #111;
+--cor-de-hover-branco: #fff;
+
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cor-de-body);
+  height: 100vh;
+  width: 100%;
+  
+}
+
+.navsair{
+  position: absolute;
+  top: 92%;
+}
+
+.navbar-brand{
+position:absolute;
+right: 0%;
+}
+
+body .container{
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cor-de-body);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /*margin: 0 auto;*/
+}
+
+.container .card{
+  position: flex;
+  border-radius: 0.25rem;
+  box-shadow: 0.35rem 0.35rem 0.65rem 0 var(--cor-de-card);
+  padding: 1rem;
+  margin: 1rem;
+  width: auto;
+  border-left: 0.15rem solid var(--cor-de-borda);
+  
+}
+
+.card p{
+  color: var(--cor-de-card-p);
+  font-size: 0.8rem;
+}
+
+.imagens{
+  float: right;
+}
+a:link{
+  text-decoration: none;
+}
+/* BEN*/
+a{
+text-decoration: none;
+}
+.home_imagem_retorno{
+  width: 30px;
+  height: 30px;
+  padding-top: 10px;
+  margin: 20px;
+  
+}
+.home_imagem_retorno:hover{
+background-color: var(--cor-de-borda);
+
+}
+
+.home_titulo{
+  
+  background-color: var(--cor-de-body);
+  margin-top: 5rem;
+  text-align: center;
+  
+  
+}
+.home_conversa{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.home_conteiner {
+  
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column; /*para deixar como coluna o flexBox*/
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+ 
+}
+
+.home_row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.home_box {
+  width: 140px;
+  height: 140px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  background-color: var(--cor-de-borda);
+  border: 1px solid var(--cor-de-borda);
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+img {
+  max-width: 80%;
+  max-height: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.home_titulo_box {
+  margin-top: 20px;
+  color: var(--cor-de-body);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.tabelaFinanceira{
+ color: var(--cor-de-texto);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+ 
+}       
+
+  strong {
+    padding: 20px 120px 120px 87px;
+  }
+
+  th, td {
+  
+  text-align: left;
+  padding: 20px 120px 8px 7px;
+  border-bottom: 2px solid #423f3f;
+  
+  }
+
+  th {
+  background-color: var(--cor-de-body);
+  }
+
+  tr:hover {
+  background-color: var(--cor-de-hover-branco);
+  }
+
+  a {
+  text-decoration: none;
+  color: var(--cor-de-texto);
+  font-weight: bold;
+  }
+
+  a:hover {
+  text-decoration: none;
+  }
+
+
+
+.tabelaFinanceira{
+
+  font-size: 20px;
+  
+}
+/*abrir chamado*/
+*{
+  box-sizing: border-box;
+}
+
+
+
+.formulario {
+  margin-top: 5px;
+  max-width: 500px;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: column;
+  align-items:first baseline;
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--cor-de-body);
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px var(--cor-de-borda);
+}
+.d-flex{
+  display: inline-flex;
+  flex-direction: inline;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select,
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--cor-de-body);
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+ 
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+input[type="button"] {
+  background-color: var(--cor-de-borda);
+  color: var(--cor-de-body);
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: inline;
+}
+input[type="button1"] {
+  background-color: var(--cor-de-borda);
+  color: var(--cor-de-body);
+  text-align: center;
+  font-size:  1rem;
+  padding: 1rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: inline;
+}
+
+
+.formularioVisitante {
+  margin-top: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items:first baseline;
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--cor-de-body);
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px var(--cor-de-borda);
+}
+.d-flex{
+  display: inline-flex;
+  flex-direction: inline;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+input[type="text"],
+select,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid  var(--cor-de-body);
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+ 
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button[type="submit"] {
+  padding: 1rem 1rem;
+  background-color: var(--cor-de-borda);
+  color: var(--cor-texto);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: inline;
+}
+.chamados{
+  margin-top: 1rem;
+  text-align: right;
+}
+.textoAbrirChamado{
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.botaoFixo{
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 2rem;
+  background-color: var(--cor-de-borda);
+  color: var(--cor-de-body);
+  border-radius: 2.0rem;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 1000;
+  bottom: 2rem
+}
+
+.Cx1{
+  padding-top: 10rem;
+  
+  
+}
+
+.txtLogin{
+
+  margin-top: 8rem;
+  text-align: center;
+
+}
+  
+
+
+  
+.mb-3X {
+
+  
+    align-items: center;
+    padding-top: 6rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+.CxLogin{
+
+  margin-top: 5rem;
+}
+.txtLogin{
+  text-align: center;
+  margin-top: 4rem;
+}
+.cadForm{
+    align-items: center;
+    padding-top: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+}
+.cadForm1{
+    align-items: center;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 4rem;
+   
+}
+.CCx2{
+  margin-top: 2rem;
+}
+.index, .login, .esqueci, .cadastro{
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cor-de-borda);
+  color: var(--cor-de-body);
+}
+
+.termouso{
+  margin-top: 1rem;
+}
+.IMG1{
+  margin-top: 6rem;
+}
+.home_titulo_chamados{
+  margin-top: 6rem;
+  text-align: center;
+}
+.botaoDisparo{
+  margin-top: 2rem;
+  
+}
+
+.cadForm1 label,
+.cadForm1 input,
+.cadForm1 select,
+.cadForm1 textarea {
+display: block; /* Transforma cada item em um bloco de elementos */
+margin-bottom: 0.8rem; /* Adiciona 10 pixels de espaço abaixo de cada item */
+}
+
+
+
+
+
+
+

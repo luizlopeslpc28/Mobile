@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#317EFB"/>
+  <title>Cadastro</title>
+  <script src="scripts.js"></script>
+
+</head>
+
+<body class="cadastro">
+  <header class="login_cabecalho">
+    <h1 class="txtLogin">CADASTRO</h1>
+  </header>
+  <div class="cadForm">
+    <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" placeholder="Email">
+
+    <label for="exampleFormControlInput1" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" placeholder="Nome">
+
+    <label for="exampleFormControlInput1" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="senha" placeholder="Senha">
+
+    <label for="exampleFormControlInput1" class="form-label">CPF</label>
+    <input type="number" class="form-control" id="cpf" placeholder="CPF">
+
+    <label for="exampleFormControlInput1" class="form-label">Telefone</label>
+    <input type="number" class="form-control" id="telefone" placeholder="Telefone">
+
+    <label for="exampleFormControlInput1" class="form-label">Apartamento</label>
+    <input type="text" class="form-control" id="apartamento" placeholder="Apartamento">
+
+    <label for="pavimento">Bloco:</label>
+    <select id="bloco" name="bloco" required>
+      <option value="">Selecione um bloco:</option>
+      <option value="Bloco A">Bloco A</option>
+      <option value="Bloco B">Bloco B</option>
+      <option value="Bloco C">Bloco C</option>
+    </select>
+  </div>
+  <div class="CCx2">
+    <ul>
+      <li class="d-grid gap-3 col-6 mx-auto">
+        <button class="btn1 btn btn-primary" type="button" aria-current="page" href="verUsuarios.html" onclick="cadastrarUsuario()">CADASTRAR</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    function cadastrarUsuario() {
+      // Obtenha os dados do formulário
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const CPF = document.getElementById('cpf').value;
+      const senha = document.getElementById('senha').value;
+      const telefone = document.getElementById('telefone').value;
+      const apartamento = document.getElementById('apartamento').value;
+      const bloco = document.getElementById('bloco').value;
+
+      // Crie o objeto de dados a ser enviado na requisição
+      const data = {
+        nome: nome,
+        email: email,
+        CPF: CPF,
+        senha: senha,
+        telefone: telefone,
+        apartamento: apartamento,
+        bloco: bloco,
+      };
+
+      // Faça a requisição POST usando o Axios
+      axios.post('http://localhost:1234/CadastrarUsuarios', data)
+        .then(response => {
+          console.log(response.data);
+          // Faça algo com a resposta, como exibir uma mensagem de sucesso
+          alert('Cadastro realizado com sucesso!');
+
+          window.location.href = 'verUsuarios.html';
+        })
+        .catch(error => {
+          console.error(error);
+          // Lide com o erro, exiba uma mensagem de erro, etc.
+          alert('Ocorreu um erro ao cadastrar.');
+        });
+    }
+  </script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registrado com sucesso:', registration);
+      })
+      .catch(error => {
+        console.log('Falha ao registrar o Service Worker:', error);
+      });
+  }
+</script>
+
+</body>
+
+</html>
